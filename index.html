@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,135 @@
     <meta name="description"
         content="TechWave is a podcast that helps you stay up-to-date with the latest tech trends and grow professionally.">
 
+    
     <script src="https://cdn.tailwindcss.com"></script>
 
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        outfit: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1a0a2e',
+                        secondary: '#16082a',
+                        accent: '#8b5cf6',
+                        gradientStart: '#f97316',
+                        gradientEnd: '#ec4899',
+                    }
+                }
+            }
+        }
+    </script>
+
+   
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        
+        .text-gradient {
+            background: linear-gradient(90deg, #f97316, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+     
+        .btn-gradient {
+            background: linear-gradient(90deg, #f97316, #ec4899);
+            transition: all 0.3s ease;
+        }
+
+        .btn-gradient:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);
+        }
+
+        
+        .btn-outline {
+            border: 2px solid transparent;
+            background: linear-gradient(#1a0a2e, #1a0a2e) padding-box,
+                linear-gradient(90deg, #f97316, #ec4899) border-box;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background: linear-gradient(90deg, #f97316, #ec4899);
+            transform: scale(1.05);
+        }
+
+        
+        .hero-bg {
+            background-image: url('assets/hero-bg.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+      
+        .footer-bg {
+            background-image: url('assets/footer-bg.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+       
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+        }
+
+   
+        .circle-glow {
+            box-shadow: 0 0 60px rgba(249, 115, 22, 0.5),
+                0 0 100px rgba(236, 72, 153, 0.3);
+        }
+    </style>
 </head>
-<body>
+
+<body class="bg-primary text-white">
+
+
+    <nav class="py-4 px-6 lg:px-16">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+
+   
+            <a href="#" class="text-2xl font-bold">
+                <span class="text-white">Tech</span><span class="text-gradient">Wave</span>
+            </a>
+
+      
+            <ul class="hidden lg:flex items-center gap-8">
+                <li><a href="#about" class="hover:text-purple-400 transition">About</a></li>
+                <li><a href="#episodes" class="hover:text-purple-400 transition">Episodes</a></li>
+                <li><a href="#host" class="hover:text-purple-400 transition">Host</a></li>
+            </ul>
+
+         
+            <a href="#" class="hidden lg:block btn-gradient px-6 py-2 rounded-full font-medium">
+                Subscribe Now
+            </a>
+
+        
+            <button class="lg:hidden">
+                <img src="assets/hamburger-menu.png" alt="Menu" class="w-6 h-6">
+            </button>
+        </div>
+    </nav>
 
 </body>
+
 </html>
