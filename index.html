@@ -8,15 +8,15 @@
     <meta name="description"
         content="TechWave is a podcast that helps you stay up-to-date with the latest tech trends and grow professionally.">
 
-    
+  
     <script src="https://cdn.tailwindcss.com"></script>
 
-    
+   
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-
+   
     <script>
         tailwind.config = {
             theme: {
@@ -42,7 +42,7 @@
             font-family: 'Outfit', sans-serif;
         }
 
-        
+       
         .text-gradient {
             background: linear-gradient(90deg, #f97316, #ec4899);
             -webkit-background-clip: text;
@@ -50,7 +50,7 @@
             background-clip: text;
         }
 
-     
+        
         .btn-gradient {
             background: linear-gradient(90deg, #f97316, #ec4899);
             transition: all 0.3s ease;
@@ -61,7 +61,7 @@
             box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);
         }
 
-        
+     
         .btn-outline {
             border: 2px solid transparent;
             background: linear-gradient(#1a0a2e, #1a0a2e) padding-box,
@@ -82,6 +82,14 @@
             background-repeat: no-repeat;
         }
 
+        
+        @media (max-width: 1023px) {
+            .hero-bg {
+                background-size: 95% auto;
+                background-position: center top 80px;
+            }
+        }
+
       
         .footer-bg {
             background-image: url('assets/footer-bg.png');
@@ -89,7 +97,7 @@
             background-position: center;
         }
 
-       
+      
         .card-hover {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -99,44 +107,158 @@
             box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
         }
 
-   
+       
         .circle-glow {
             box-shadow: 0 0 60px rgba(249, 115, 22, 0.5),
                 0 0 100px rgba(236, 72, 153, 0.3);
         }
+         @keyframes wave-pulse {
+            0% {
+                transform: scaleX(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scaleX(1.2);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scaleX(1);
+                opacity: 0.5;
+            }
+        }
+
+        .wave-animation {
+            animation: wave-pulse 2s infinite ease-in-out;
+        }
+    
     </style>
 </head>
 
 <body class="bg-primary text-white">
 
-
+ 
     <nav class="py-4 px-6 lg:px-16">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
 
-   
+        
             <a href="#" class="text-2xl font-bold">
                 <span class="text-white">Tech</span><span class="text-gradient">Wave</span>
             </a>
 
-      
+            
             <ul class="hidden lg:flex items-center gap-8">
                 <li><a href="#about" class="hover:text-purple-400 transition">About</a></li>
                 <li><a href="#episodes" class="hover:text-purple-400 transition">Episodes</a></li>
                 <li><a href="#host" class="hover:text-purple-400 transition">Host</a></li>
             </ul>
 
-         
+          
             <a href="#" class="hidden lg:block btn-gradient px-6 py-2 rounded-full font-medium">
                 Subscribe Now
             </a>
 
-        
+           
             <button class="lg:hidden">
                 <img src="assets/hamburger-menu.png" alt="Menu" class="w-6 h-6">
             </button>
         </div>
     </nav>
 
+
+    
+    <section class="hero-bg py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+
+        
+            <div class="relative inline-block mb-8">
+               
+                <span
+                    class="absolute top-0 right-0 bg-[#1cd45e] text-[#1a0a2e] text-xs px-3 py-1 rounded-full font-bold z-20 uppercase tracking-wide">
+                    NEW
+                </span>
+
+                
+                <div class="absolute inset-0 flex items-center justify-center z-10">
+                    <img src="assets/microphone.png" alt="Microphone"
+                        class="w-24 h-24 lg:w-32 lg:h-32 object-contain drop-shadow-lg">
+                </div>
+
+              
+                <div class="w-40 h-40 lg:w-52 lg:h-52 rounded-full circle-glow overflow-hidden mx-auto">
+                    <img src="assets/hero-circle.png" alt="TechWave Podcast"
+                        class="w-full h-full object-cover opacity-80">
+                </div>
+            </div>
+
+            
+            <h1 class="text-3xl lg:text-5xl font-bold mb-4">TechWave</h1>
+
+           
+            <p class="text-gray-300 max-w-2xl mx-auto mb-8 text-sm lg:text-base">
+                Your daily dose of tech insights, productivity hacks, and personal growth
+            </p>
+
+            
+            <div class="flex flex-row gap-4 justify-center">
+                <a href="#" class="btn-gradient px-6 py-3 rounded-full font-medium flex items-center gap-2">
+                    <img src="assets/spotify.png" alt="Spotify" class="w-5 h-5">
+                    Listen On Spotify
+                </a>
+                <a href="#" class="btn-outline px-6 py-3 rounded-full font-medium flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                        </path>
+                    </svg>
+                    Subscribe
+                </a>
+            </div>
+        </div>
+    </section>
+ <section id="about" class="py-16 lg:py-20 bg-secondary">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+
+          
+            <h2 class="text-2xl lg:text-4xl font-bold mb-4">About The Podcast</h2>
+
+        
+            <p class="text-gray-400 max-w-3xl mx-auto mb-12 text-sm lg:text-base">
+                TechWave is a podcast for everyone in tech, whether you're just starting out or looking
+                to learn more about the industry. We talk about coding, tips for the job market,
+                career advice, and real experiences from professionals in the field.
+            </p>
+
+           
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+
+           
+                <div class="text-center">
+                    <h3 class="text-3xl lg:text-4xl font-bold text-gradient">150K+</h3>
+                    <p class="text-gray-400 text-sm mt-2">Monthly Listeners</p>
+                </div>
+
+              
+                <div class="text-center">
+                    <h3 class="text-3xl lg:text-4xl font-bold text-gradient">200+</h3>
+                    <p class="text-gray-400 text-sm mt-2">Published Episodes</p>
+                </div>
+
+               
+                <div class="text-center">
+                    <h3 class="text-3xl lg:text-4xl font-bold text-orange-500">4.9★</h3>
+                    <p class="text-gray-400 text-sm mt-2">Average Rating</p>
+                </div>
+
+          
+                <div class="text-center">
+                    <h3 class="text-3xl lg:text-4xl font-bold text-gradient">50+</h3>
+                    <p class="text-gray-400 text-sm mt-2">Expert Guests</p>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>
